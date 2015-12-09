@@ -1,0 +1,7 @@
+[package]
+name = "advent4"
+version = "0.1.0"
+authors = ["Linus Färnstrand <faern@faern.net>"]
+
+[dependencies]
+rust-crypto = "0.2.*"
