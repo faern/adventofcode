@@ -1,0 +1,4 @@
+[package]
+name = "advent8"
+version = "0.1.0"
+authors = ["Linus Färnstrand <faern@faern.net>"]
