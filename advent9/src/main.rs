@@ -23,7 +23,8 @@ fn main() {
     let mut cities = cities_set.into_iter().collect::<Vec<String>>();
     permute(cities.len(), &mut cities, &mut city_permutations);
 
-    let mut minimum_distance = !0 as u32;
+    let mut min_distance = !0 as u32;
+    let mut max_distance = 0 as u32;
     for permutation in city_permutations {
         let mut distance = 0;
         let mut last_city = None;
@@ -34,11 +35,15 @@ fn main() {
             }
             last_city = Some(city);
         }
-        if distance < minimum_distance {
-            minimum_distance = distance;
+        if distance < min_distance {
+            min_distance = distance;
+        }
+        if distance > max_distance {
+            max_distance = distance;
         }
     }
-    println!("The shortest way to everyone is {}", minimum_distance);
+    println!("The shortest way to everyone is {}", min_distance);
+    println!("When santa wants show off how cool his raindeers are he has to drive {}", max_distance);
 }
 
 /// Heap's algorithm for permutations
